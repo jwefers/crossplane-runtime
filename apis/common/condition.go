@@ -60,9 +60,10 @@ const (
 
 // Reasons a resource is or is not synced.
 const (
-	ReasonReconcileSuccess ConditionReason = "ReconcileSuccess"
-	ReasonReconcileError   ConditionReason = "ReconcileError"
-	ReasonReconcilePaused  ConditionReason = "ReconcilePaused"
+	ReasonReconcileSuccess   ConditionReason = "ReconcileSuccess"
+	ReasonReconcileError     ConditionReason = "ReconcileError"
+	ReasonReconcilePaused    ConditionReason = "ReconcilePaused"
+	ReasonReconcileForbidden ConditionReason = "ReconcileForbidden"
 )
 
 // See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties
@@ -310,5 +311,15 @@ func ReconcilePaused() Condition {
 		Status:             corev1.ConditionFalse,
 		LastTransitionTime: metav1.Now(),
 		Reason:             ReasonReconcilePaused,
+	}
+}
+
+func ReconcileForbidden() Condition {
+	return Condition{
+		Type:               TypeSynced,
+		Status:             corev1.ConditionFalse,
+		LastTransitionTime: metav1.Now(),
+		Reason:             ReasonReconcileForbidden,
+		Message:            "This resource differs from the external resource state. Add 'Update' to .spec.managementPolicies or align this resource with the actual state.",
 	}
 }
