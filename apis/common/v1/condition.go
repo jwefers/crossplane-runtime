@@ -134,3 +134,7 @@ func ReconcileError(err error) Condition {
 func ReconcilePaused() Condition {
 	return common.ReconcilePaused()
 }
+
+func ReconcileForbidden() Condition {
+	return common.ReconcileForbidden()
+}
