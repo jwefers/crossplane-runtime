@@ -31,9 +31,9 @@ import (
 	"k8s.io/client-go/util/retry"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/meta"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/meta"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 )
 
 const (

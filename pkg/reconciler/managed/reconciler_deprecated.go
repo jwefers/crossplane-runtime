@@ -19,7 +19,7 @@ package managed
 import (
 	"context"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 )
 
 // ExternalConnecter an alias to ExternalConnector.

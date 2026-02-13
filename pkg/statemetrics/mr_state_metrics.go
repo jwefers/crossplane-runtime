@@ -26,10 +26,10 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/apiutil"
 
-	xpv1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	xpv1 "github.com/jwefers/crossplane-runtime/v2/apis/common/v1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 )
 
 // MRStateMetrics holds Prometheus metrics for managed resources.

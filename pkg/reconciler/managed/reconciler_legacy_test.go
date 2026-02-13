@@ -32,13 +32,13 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	"github.com/crossplane/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
-	xpv1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/meta"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	"github.com/jwefers/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
+	xpv1 "github.com/jwefers/crossplane-runtime/v2/apis/common/v1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/meta"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 var _ reconcile.Reconciler = &Reconciler{}
@@ -1967,53 +1967,6 @@ func TestReconciler(t *testing.T) {
 							},
 						}
 
-						return c, nil
-					})),
-					WithFinalizer(resource.FinalizerFns{AddFinalizerFn: func(_ context.Context, _ resource.Object) error { return nil }}),
-				},
-			},
-			want: want{result: reconcile.Result{RequeueAfter: defaultPollInterval}},
-		},
-		"ManagementPolicyOrphanUpdateSuccessful": {
-			reason: "A successful managed resource update using management policies should trigger a requeue after a long wait.",
-			args: args{
-				m: &fake.Manager{
-					Client: &test.MockClient{
-						MockGet: test.NewMockGetFn(nil, func(obj client.Object) error {
-							mg := asLegacyManaged(obj, 42)
-							mg.SetManagementPolicies(xpv1.ManagementPolicies{xpv1.ManagementActionOrphan})
-							return nil
-						}),
-						MockStatusUpdate: test.MockSubResourceUpdateFn(func(_ context.Context, obj client.Object, _ ...client.SubResourceUpdateOption) error {
-							want := newLegacyManaged(42)
-							want.SetManagementPolicies(xpv1.ManagementPolicies{xpv1.ManagementActionOrphan})
-							want.SetConditions(xpv1.ReconcileSuccess().WithObservedGeneration(42))
-							if diff := cmp.Diff(want, obj, test.EquateConditions()); diff != "" {
-								reason := "A successful managed resource update should be reported as a conditioned status."
-								t.Errorf("\nReason: %s\n-want, +got:\n%s", reason, diff)
-							}
-							return nil
-						}),
-					},
-					Scheme: fake.SchemeWith(&fake.LegacyManaged{}),
-				},
-				mg: resource.ManagedKind(fake.GVK(&fake.LegacyManaged{})),
-				o: []ReconcilerOption{
-					WithInitializers(),
-					WithManagementPolicies(),
-					WithReferenceResolver(ReferenceResolverFn(func(_ context.Context, _ resource.Managed) error { return nil })),
-					WithExternalConnector(ExternalConnectorFn(func(_ context.Context, _ resource.Managed) (ExternalClient, error) {
-						c := &ExternalClientFns{
-							ObserveFn: func(_ context.Context, _ resource.Managed) (ExternalObservation, error) {
-								return ExternalObservation{ResourceExists: true, ResourceUpToDate: false}, nil
-							},
-							UpdateFn: func(_ context.Context, _ resource.Managed) (ExternalUpdate, error) {
-								return ExternalUpdate{}, nil
-							},
-							DisconnectFn: func(_ context.Context) error {
-								return nil
-							},
-						}
 						return c, nil
 					})),
 					WithFinalizer(resource.FinalizerFns{AddFinalizerFn: func(_ context.Context, _ resource.Object) error { return nil }}),

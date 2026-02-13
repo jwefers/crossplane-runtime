@@ -26,9 +26,9 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
 
-	xpv1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	xpv1 "github.com/jwefers/crossplane-runtime/v2/apis/common/v1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 const (

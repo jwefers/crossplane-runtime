@@ -31,7 +31,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/yaml"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 // Lintable defines the common API for lintable packages.

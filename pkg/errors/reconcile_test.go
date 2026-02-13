@@ -25,7 +25,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 func TestSilentlyRequeueOnConflict(t *testing.T) {

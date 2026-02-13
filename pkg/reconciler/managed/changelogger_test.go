@@ -32,12 +32,12 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/utils/ptr"
 
-	"github.com/crossplane/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/meta"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	"github.com/jwefers/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/meta"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 // A mock implementation of the ChangeLogServiceClient interface to help with

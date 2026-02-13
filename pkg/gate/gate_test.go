@@ -23,7 +23,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/gate"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/gate"
 )
 
 func TestGateRegister(t *testing.T) {

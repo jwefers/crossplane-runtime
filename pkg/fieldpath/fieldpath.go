@@ -48,7 +48,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 // A SegmentType within a field path; either a field within an object, or an

@@ -25,8 +25,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/controller"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/controller"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
 )
 
 // Reconciler reconciles a CustomResourceDefinitions in order to gate and wait

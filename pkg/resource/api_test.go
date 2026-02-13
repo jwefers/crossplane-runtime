@@ -27,9 +27,9 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 func TestAPIPatchingApplicator(t *testing.T) {

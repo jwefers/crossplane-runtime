@@ -31,10 +31,10 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource/fake"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource/fake"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/test"
 )
 
 // This can't live in fake, because it would cause an import cycle due to

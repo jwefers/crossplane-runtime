@@ -21,7 +21,7 @@ import (
 
 	"k8s.io/apimachinery/pkg/runtime"
 
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
 )
 
 const (

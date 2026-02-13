@@ -30,15 +30,15 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	"github.com/crossplane/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
-	xpv1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/conditions"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/errors"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/event"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/feature"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/logging"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/meta"
-	"github.com/crossplane/crossplane-runtime/v2/pkg/resource"
+	"github.com/jwefers/crossplane-runtime/v2/apis/changelogs/proto/v1alpha1"
+	xpv1 "github.com/jwefers/crossplane-runtime/v2/apis/common/v1"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/conditions"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/errors"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/event"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/feature"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/logging"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/meta"
+	"github.com/jwefers/crossplane-runtime/v2/pkg/resource"
 )
 
 const (
